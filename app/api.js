@@ -12,6 +12,7 @@ app.get('/', function (req, res) {
 // /apelido/tasks/id (GET, POST, PUT, DELETE, HEAD)
 
 app.get('/:user/tasks', (requisicao, resposta) => {
+  let user = requisicao.params.user;
   if (user == "minora"){
     resposta.json({
       user: "minora",
@@ -21,7 +22,7 @@ app.get('/:user/tasks', (requisicao, resposta) => {
       ]
     });
   } else {
-    resposta.statusCode(400);
+    resposta.status(400).end();
   }
 })
 
