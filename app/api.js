@@ -11,14 +11,18 @@ app.get('/', function (req, res) {
 // /apelido/tasks (GET, POST, PUT, DELETE, HEAD)
 // /apelido/tasks/id (GET, POST, PUT, DELETE, HEAD)
 
-app.get('/minora/tasks', (requisicao, resposta) => {
-  resposta.json({
-    user: "minora",
-    tasks: [
-      {id: "123", title: "Teach API Restful"},
-      {id: "321", title: "Distributed systems"}
-    ]
-  });
+app.get('/:user/tasks', (requisicao, resposta) => {
+  if (user == "minora"){
+    resposta.json({
+      user: "minora",
+      tasks: [
+        {id: "123", title: "Teach API Restful"},
+        {id: "321", title: "Distributed systems"}
+      ]
+    });
+  } else {
+    resposta.statusCode(400);
+  }
 })
 
 app.listen(process.env.PORT || 3000);
