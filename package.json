@@ -1,14 +1,18 @@
 {
   "name": "src-sd",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "API Restful example",
+  "main": "app/api.js",
   "scripts": {
     "start": "node app/api.js"
   },
-  "author": "",
+  "author": "Leonardo A. Minora",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "engines": {
+    "node": "9.7.1"
   }
+
 }
